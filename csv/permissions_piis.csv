@@ -1,0 +1,25 @@
+android.permission.RECORD_AUDIO;Record Audio;Sensitive
+android.permission.READ_SMS;SMS Messages;Personal
+android.permission.READ_PHONE_STATE;Phone Details;Personal
+android.permission.READ_PHONE_NUMBERS;Device Phone Numbers;Personal
+android.permission.READ_MEDIA_VISUAL_USER_SELECTED;External Storage Images and Videos ;Sensitive
+android.permission.READ_MEDIA_VIDEO;External Storage Videos;Sensitive
+android.permission.READ_MEDIA_IMAGES;External Storage Images ;Sensitive
+android.permission.READ_MEDIA_AUDIO;External Storage Audio Files;Sensitive
+android.permission.READ_EXTERNAL_STORAGE;External Storage Files;Sensitive
+android.permission.READ_CONTACTS;Contact Data;Sensitive
+android.permission.READ_CALL_LOG;Call Logs;Sensitive
+android.permission.READ_CALENDAR;Calendar Data;Personal
+android.permission.PROCESS_OUTGOING_CALLS;Calls Data;Personal
+android.permission.GET_ACCOUNTS;Accounts Data;Personal
+android.permission.CAMERA;Device Camera;Sensitive
+android.permission.BODY_SENSORS_BACKGROUND;User’s Body Data;Sensitive
+android.permission.BODY_SENSORS_WRIST_TEMPERATURE;User’s Body Data;Sensitive
+android.permission.BODY_SENSORS;User’s Body Data;Sensitive
+android.permission.BLUETOOTH_SCAN;Bluetooth Devices Data;Personal
+android.permission.BLUETOOTH_CONNECT;Bluetooth Devices Data;Personal
+android.permission.BLUETOOTH_ADMIN;Bluetooth Devices Data;Personal
+android.permission.ACCESS_MEDIA_LOCATION;Geographic Location;Sensitive
+android.permission.ACCESS_FINE_LOCATION;Precise Location;Sensitive
+android.permission.ACCESS_COARSE_LOCATION;Approximate Location;Sensitive
+android.permission.ACCESS_BACKGROUND_LOCATION;Location;Sensitive

@@ -1,0 +1,24 @@
+{
+    "Levels": [
+        {
+            "Name": "Sensitive",
+            "Score": 40
+        },
+        {
+            "Name": "Personal",
+            "Score": 30
+        },
+        {
+            "Name": "Confidential",
+            "Score": 15
+        },
+        {
+            "Name": "Public",
+            "Score": 10
+        },
+        {
+            "Name": "Non-personal",
+            "Score": 5
+        }
+    ]
+}

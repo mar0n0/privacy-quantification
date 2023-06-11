@@ -1,0 +1,1170 @@
+{
+  "classes": [
+    {
+      "Name": "TelephonyManager",
+      "class_name": "android.telephony.TelephonyManager",
+      "URL": "https://developer.android.com/reference/android/telephony/TelephonyManager",
+      "public_methods": [
+        {
+          "Name": "getAllCellInfo",
+          "PII": [
+            "geolocation"
+          ],
+          "Permission": [
+            "ACCESS_COARSE_LOCATION",
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getCarrierConfig",
+          "PII": [
+            "Carrier Settings"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getCellLocation",
+          "PII": [
+            "geolocation"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getDeviceId",
+          "PII": [
+            "Device ID",
+            "IMEI",
+            "MEID",
+            "ESN"
+          ],
+          "Permission": [
+            "READ_PRIVILEGED_PHONE_STATE",
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getEmergencyNumberList",
+          "PII": [
+            "Emergency Number List"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getGroupIdLevel1",
+          "PII": [
+            "Group Identifier Level 1",
+            "GID1",
+            "EF_AD",
+            "Phone Number"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getImei",
+          "PII": [
+            "IMEI"
+          ],
+          "Permission": [
+            "READ_PRIVILEGED_PHONE_STATE",
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getLine1Number",
+          "PII": [
+            "Phone Number",
+            "MSISDN"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE",
+            "READ_SMS",
+            "READ_PHONE_NUMBERS"
+          ]
+        },
+        {
+          "Name": "getMeid",
+          "PII": [
+            "MEID"
+          ],
+          "Permission": [
+            "READ_PRIVILEGED_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getNai",
+          "PII": [
+            "Network Access Identifier",
+            "NAI"
+          ],
+          "Permission": [
+            "READ_PRIVILEGED_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getNetworkCountryIso",
+          "PII": [
+            "Network Country ISO"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getNetworkOperator",
+          "PII": [
+            "Network Operator Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getNetworkOperatorName",
+          "PII": [
+            "Network Operator Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getNetworkType",
+          "PII": [
+            "Network Type"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getPrimaryImei",
+          "PII": [
+            "IMEI"
+          ],
+          "Permission": [
+            "READ_PRIVILEGED_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getServiceState",
+          "PII": [
+            "Phone State",
+            "Service Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE",
+            "ACCESS_COARSE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getSimCarrierId",
+          "PII": [
+            "Phone State",
+            "Service Information"
+          ],
+          "Permission": [
+            "SIM Carrier ID"
+          ]
+        },
+        {
+          "Name": "getSimCarrierIdName",
+          "PII": [
+            "SIM Carrier Name"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSimCountryIso",
+          "PII": [
+            "SIM Country ISO"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSimOperator",
+          "PII": [
+            "SIM Operator Code"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSimOperatorName",
+          "PII": [
+            "SIM Operator Name"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSimSerialNumber",
+          "PII": [
+            "SIM Serial Number"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSimSpecificCarrierId",
+          "PII": [
+            "SIM Carrier ID"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSimSpecificCarrierIdName",
+          "PII": [
+            "SIM Carrier Name"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSubscriberId",
+          "PII": [
+            "Subscriber ID"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getSubscriptionId",
+          "PII": [
+            "Subscription ID"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getVoiceMailAlphaTag",
+          "PII": [
+            "Voice Mail ID"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getVoiceMailNumber",
+          "PII": [
+            "Voice Mail Number"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "ContentResolver",
+      "class_name": "android.content.ContentResolver",
+      "URL": "https://developer.android.com/reference/android/content/ContentResolver",
+      "public_methods": [
+        {
+          "Name": "getCurrentSync",
+          "PII": [
+            "Synced Data"
+          ],
+          "Permission": [
+            "READ_SYNC_STATS"
+          ]
+        },
+        {
+          "Name": "getCurrentSyncs",
+          "PII": [
+            "Synced Data"
+          ],
+          "Permission": [
+            "READ_SYNC_STATS"
+          ]
+        },
+        {
+          "Name": "getOutgoingPersistedUriPermissions",
+          "PII": [
+            "URI Data"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getPeriodicSyncs",
+          "PII": [
+            "Synced Data"
+          ],
+          "Permission": [
+            "READ_SYNC_STATS"
+          ]
+        },
+        {
+          "Name": "getPersistedUriPermissions",
+          "PII": [
+            "URI Data"
+          ],
+          "Permission": []
+        }
+      ]
+    },
+    {
+      "Name": "BluetoothAdapter",
+      "class_name": "android.bluetooth.BluetoothAdapter",
+      "URL": "https://developer.android.com/reference/android/bluetooth/BluetoothAdapter",
+      "public_methods": [
+        {
+          "Name": "getAddress",
+          "PII": [
+            "MAC address"
+          ],
+          "Permission": [
+            "BLUETOOTH",
+            "BLUETOOTH_CONNECT"
+          ]
+        },
+        {
+          "Name": "getBondedDevices",
+          "PII": [
+            "Paired Bluetooth Devices"
+          ],
+          "Permission": [
+            "BLUETOOTH",
+            "BLUETOOTH_CONNECT"
+          ]
+        },
+        {
+          "Name": "getName",
+          "PII": [
+            "Device Bluetooth Name"
+          ],
+          "Permission": [
+            "BLUETOOTH",
+            "BLUETOOTH_CONNECT"
+          ]
+        },
+        {
+          "Name": "getRemoteDevice",
+          "PII": [
+            "Bluetooth Device"
+          ],
+          "Permission": [
+            "BLUETOOTH",
+            "BLUETOOTH_CONNECT"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "DownloadManager",
+      "class_name": "android.app.DownloadManager",
+      "URL": "https://developer.android.com/reference/android/app/DownloadManager",
+      "public_methods": [
+        {
+          "Name": "addCompletedDownload",
+          "PII": [
+            "User Files"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getUriForDownloadedFile",
+          "PII": [
+            "User Files"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "openDownloadedFile",
+          "PII": [
+            "User Files"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "query",
+          "PII": [
+            "User Files"
+          ],
+          "Permission": []
+        }
+      ]
+    },
+    {
+      "Name": "ConnectivityManager",
+      "class_name": "android.net.ConnectivityManager",
+      "URL": "https://developer.android.com/reference/android/net/ConnectivityManager",
+      "public_methods": [
+        {
+          "Name": "getActiveNetworkInfo",
+          "PII": [
+            "Network Information"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getAllNetworkInfo",
+          "PII": [
+            "Network Information"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getAllNetworks",
+          "PII": [
+            "Network Information"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getConnectionOwnerUid",
+          "PII": [
+            "App UID"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getLinkProperties",
+          "PII": [
+            "Network Information"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getNetworkCapabilities",
+          "PII": [
+            "Network Information"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getNetworkInfo",
+          "PII": [
+            "Network Information"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "getProcessDefaultNetwork",
+          "PII": [
+            "APP Network"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getBoundNetworkForProcess",
+          "PII": [
+            "APP Network"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "isActiveNetworkMetered",
+          "PII": [
+            "Network Type"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "isDefaultNetworkActive",
+          "PII": [
+            "Network Status"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "registerBestMatchingNetworkCallback",
+          "PII": [
+            "Network Connections"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "registerDefaultNetworkCallback",
+          "PII": [
+            "Network Connections"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        },
+        {
+          "Name": "registerNetworkCallback",
+          "PII": [
+            "Network Connections"
+          ],
+          "Permission": [
+            "ACCESS_NETWORK_STATE"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "AccountManager",
+      "class_name": "android.accounts.AccountManager",
+      "URL": "https://developer.android.com/reference/android/accounts/AccountManager",
+      "public_methods": [
+        {
+          "Name": "addAccount",
+          "PII": [
+            "User Account"
+          ],
+          "Permission": [
+            "MANAGE_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "addAccountExplicitly",
+          "PII": [
+            "User Account"
+          ],
+          "Permission": [
+            "AUTHENTICATE_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "blockingGetAuthToken",
+          "PII": [
+            "Auth Token"
+          ],
+          "Permission": [
+            "USE_CREDENTIALS"
+          ]
+        },
+        {
+          "Name": "getAccounts",
+          "PII": [
+            "Account Details"
+          ],
+          "Permission": [
+            "GET_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "getAccountsByType",
+          "PII": [
+            "Account Details"
+          ],
+          "Permission": [
+            "GET_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "getAccountsByTypeAndFeatures",
+          "PII": [
+            "Account Details"
+          ],
+          "Permission": [
+            "GET_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "getAuthToken",
+          "PII": [
+            "Auth Token"
+          ],
+          "Permission": [
+            "USE_CREDENTIALS"
+          ]
+        },
+        {
+          "Name": "getAuthTokenByFeatures",
+          "PII": [
+            "Auth Token"
+          ],
+          "Permission": [
+            "MANAGE_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "getPassword",
+          "PII": [
+            "Account Password"
+          ],
+          "Permission": [
+            "AUTHENTICATE_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "getUserData",
+          "PII": [
+            "Account Data"
+          ],
+          "Permission": [
+            "AUTHENTICATE_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "hasFeatures",
+          "PII": [
+            "Account Features"
+          ],
+          "Permission": [
+            "GET_ACCOUNTS"
+          ]
+        },
+        {
+          "Name": "peekAuthToken",
+          "PII": [
+            "Auth Token"
+          ],
+          "Permission": [
+            "AUTHENTICATE_ACCOUNTS"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "LocationManager",
+      "class_name": "android.location.LocationManager",
+      "URL": "https://developer.android.com/reference/android/location/LocationManager",
+      "public_methods": [
+        {
+          "Name": "addGpsStatusListener",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "addNmeaListener",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "addProximityAlert",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_COARSE_LOCATION",
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getCurrentLocation",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_COARSE_LOCATION",
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getGnssHardwareModelName",
+          "PII": [
+            "GNSS Details"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getGnssYearOfHardware",
+          "PII": [
+            "GNSS Details"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getGpsStatus",
+          "PII": [
+            "GNSS Details"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getLastKnownLocation",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_COARSE_LOCATION",
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "getProvider",
+          "PII": [
+            "Location Provider"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getProviderProperties",
+          "PII": [
+            "Location Provider"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getProviders",
+          "PII": [
+            "Location Provider"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "registerAntennaInfoListener",
+          "PII": [
+            "Location"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "registerGnssMeasurementsCallback",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "registerGnssNavigationMessageCallback",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "registerGnssStatusCallback",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "requestLocationUpdates",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_COARSE_LOCATION",
+            "ACCESS_FINE_LOCATION"
+          ]
+        },
+        {
+          "Name": "requestSingleUpdate",
+          "PII": [
+            "Location"
+          ],
+          "Permission": [
+            "ACCESS_COARSE_LOCATION",
+            "ACCESS_FINE_LOCATION"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "StorageManager",
+      "class_name": "android.os.storage.StorageManager",
+      "URL": "https://developer.android.com/reference/android/os/storage/StorageManager",
+      "public_methods": [
+        {
+          "Name": "getPrimaryStorageVolume",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getRecentStorageVolumes",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getStorageVolume",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getStorageVolumes",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getStorageVolumesIncludingSharedProfiles",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": [
+            "MANAGE_EXTERNAL_STORAGE"
+          ]
+        },
+        {
+          "Name": "isAllocationSupported",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "isCacheBehaviorGroup",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "isCacheBehaviorTombstone",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "isCheckpointSupported",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "isEncrypted",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "isObbMounted",
+          "PII": [
+            "Storage Information"
+          ],
+          "Permission": []
+        }
+      ]
+    },
+    {
+      "Name": "WifiManager",
+      "class_name": "android.net.wifi.WifiManager",
+      "URL": "https://developer.android.com/reference/android/net/wifi/WifiManager",
+      "public_methods": [
+        {
+          "Name": "addLocalOnlyConnectionFailureListener",
+          "PII": [
+            "Network Failures"
+          ],
+          "Permission": [
+            "ACCESS_WIFI_STATE"
+          ]
+        },
+        {
+          "Name": "addSuggestionConnectionStatusListener",
+          "PII": [
+            "Network Connections"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION",
+            "ACCESS_WIFI_STATE"
+          ]
+        },
+        {
+          "Name": "addSuggestionUserApprovalStatusListener",
+          "PII": [
+            "Network Connections"
+          ],
+          "Permission": [
+            "ACCESS_WIFI_STATE"
+          ]
+        },
+        {
+          "Name": "getAllowedChannels",
+          "PII": [
+            "Wifi Channel"
+          ],
+          "Permission": [
+            "NEARBY_WIFI_DEVICES"
+          ]
+        },
+        {
+          "Name": "getCallerConfiguredNetworks",
+          "PII": [
+            "Device Network"
+          ],
+          "Permission": [
+            "ACCESS_WIFI_STATE"
+          ]
+        },
+        {
+          "Name": "getChannelData",
+          "PII": [
+            "Wifi Channel"
+          ],
+          "Permission": [
+            "NEARBY_WIFI_DEVICES"
+          ]
+        },
+        {
+          "Name": "getConfiguredNetworks",
+          "PII": [
+            "Device Network"
+          ],
+          "Permission": [
+            "ACCESS_FINE_LOCATION",
+            "ACCESS_WIFI_STATE"
+          ]
+        },
+        {
+          "Name": "getConnectionInfo",
+          "PII": [
+            "Connection Details"
+          ],
+          "Permission": []
+        }
+      ]
+    },
+    {
+      "Name": "MediaRecorder",
+      "class_name": "android.media.MediaRecorder",
+      "URL": "https://developer.android.com/reference/android/media/MediaRecorder",
+      "public_methods": [
+        {
+          "Name": "getActiveMicrophones",
+          "PII": [
+            "Active Microphones"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getActiveRecordingConfiguration",
+          "PII": [
+            "Recording Configuration"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getMetrics",
+          "PII": [
+            "Audio Configurations"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getRoutedDevice",
+          "PII": [
+            "Device Audio Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "registerAudioRecordingCallback",
+          "PII": [
+            "Audio Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "release",
+          "PII": [
+            "Audio And Video Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "reset",
+          "PII": [
+            "Audio And Video Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "resume",
+          "PII": [
+            "Audio And Video Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "setLocation",
+          "PII": [
+            "Location"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "start",
+          "PII": [
+            "Audio And Video Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "stop",
+          "PII": [
+            "Audio And Video Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "startRecording",
+          "PII": [
+            "Audio And Video Recording"
+          ],
+          "Permission": []
+        }
+      ]
+    },
+    {
+      "Name": "AudioRecord",
+      "class_name": "android.media.AudioRecord",
+      "URL": "https://developer.android.com/reference/android/media/AudioRecord",
+      "public_methods": [
+        {
+          "Name": "getState",
+          "PII": [
+            "Recording State"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getRecordingState",
+          "PII": [
+            "Recording State"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "read",
+          "PII": [
+            "Audio Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "release",
+          "PII": [
+            "Audio Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "stop",
+          "PII": [
+            "Audio Recording"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "startRecording",
+          "PII": [
+            "Audio Recording"
+          ],
+          "Permission": []
+        }
+      ]
+    },
+    {
+      "Name": "SubscriptionManager",
+      "class_name": "android.telephony.SubscriptionManager",
+      "URL": "https://developer.android.com/reference/android/telephony/SubscriptionManager",
+      "public_methods": [
+        {
+          "Name": "getAccessibleSubscriptionInfoList",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getActiveSubscriptionInfo",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getActiveSubscriptionInfoForSimSlotIndex",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getActiveSubscriptionInfoList",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getAllSubscriptionInfoList",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getCompleteActiveSubscriptionInfoList",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getDeviceToDeviceStatusSharingContacts",
+          "PII": [
+            "Phone Contacts"
+          ],
+          "Permission": []
+        },
+        {
+          "Name": "getOpportunisticSubscriptions",
+          "PII": [
+            "Subscription Information"
+          ],
+          "Permission": [
+            "READ_PHONE_STATE"
+          ]
+        },
+        {
+          "Name": "getPhoneNumber",
+          "PII": [
+            "Phone Number"
+          ],
+          "Permission": [
+            "READ_PRIVILEGED_PHONE_STATE",
+            "READ_PHONE_NUMBERS"
+          ]
+        }
+      ]
+    }
+  ]
+}
