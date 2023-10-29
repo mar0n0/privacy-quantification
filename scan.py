@@ -127,8 +127,8 @@ def get_permissions_pii(dir_path, scanner_dir):
     if os.path.isfile(os.path.join(dir_path, "app_permissions_piis.csv")):
         return
     
-    permissions_list = []
-    permissions_methods = get_permissions_methods(dir_path)
+    #permissions_list = []
+    #permissions_methods = get_permissions_methods(dir_path)
 
     app_permissions = open(os.path.join(dir_path, "app_permissions.csv"), 'r', newline='')
     app_permissions_reader = csv.reader(app_permissions, delimiter=',')
@@ -142,8 +142,10 @@ def get_permissions_pii(dir_path, scanner_dir):
     rows = []
     for row in permissions_csv_reader:
         rows.append(row)
-            
-    for line in app_permissions_reader: # Search if the permissions in android manifest are already present in public methods found
+        
+    '''         
+    # Search if the permissions in android manifest are already present in public methods found
+    for line in app_permissions_reader: 
         temp_line = line[0].split('.')[2]
         if temp_line not in permissions_methods:
             permissions_list.append(temp_line)
@@ -151,15 +153,23 @@ def get_permissions_pii(dir_path, scanner_dir):
     final_permissions = []      
     for perm in permissions_list: # Search if the permissions are sensitive
         for row in rows:
-            if perm == row[0].split(".")[2]:
+            if perm == row[0].split(".")[2] and row not in final_permissions:
+                final_permissions.append(row)
+    '''
+    
+    final_permissions = []      
+    for perm in app_permissions_reader: # Search if the permissions are sensitive
+        for row in rows:
+            if perm[0].split(".")[2] == row[0].split(".")[2] and row not in final_permissions:
                 final_permissions.append(row)
     
     if len(final_permissions) > 0: # If we have permissions to write
-        for permission in final_permissions:    
+        for permission in final_permissions:
             app_permissions_pii_writer.writerow(permission)
     else: # If not delete the file
         app_permissions_pii.close()
         os.remove(os.path.join(dir_path, "app_permissions_piis.csv"))
+
 
 # Get permissions from the public methods
 def get_permissions_methods(dir_path):
@@ -177,25 +187,7 @@ def get_permissions_methods(dir_path):
     return list_permissions
 
 # Get the final score
-def calculate_score(dir_path, scanner_dir, package_name, package_version):
-
-    # GET PIIS OF METHODS AND PERMISSIONS
-    app_permissions_perm_piis = []
-    app_methods_met_piis = []
-
-    if os.path.isfile(os.path.join(dir_path, "app_methods_piis.csv")):
-        app_methods = open(os.path.join(dir_path, "app_methods_piis.csv"), 'r', newline='')
-        app_methods_pii_reader = csv.reader(app_methods, delimiter=';')
-        app_methods_met_piis = [[row[2], row[3]] for row in app_methods_pii_reader]
-        
-    if os.path.isfile(os.path.join(dir_path, "app_permissions_piis.csv")):
-        app_permissions = open(os.path.join(dir_path, "app_permissions_piis.csv"), 'r', newline='')
-        app_permissions_piis_reader = csv.reader(app_permissions, delimiter=';')
-        app_permissions_perm_piis = [[row[0], row[1]] for row in app_permissions_piis_reader]
-        
-    print(app_methods_met_piis)
-    print(app_permissions_perm_piis)
-
+def calculate_score(dir_path, scanner_dir):
 
     # GET SCORE
     levels = {
@@ -206,48 +198,95 @@ def calculate_score(dir_path, scanner_dir, package_name, package_version):
         "Non-personal": 5
     }
     
+
+    '''
+    # GET PIIS OF METHODS AND PERMISSIONS
+    app_permissions_perm_piis = []
+    app_methods_met_piis = []
+    
+
+    if os.path.isfile(os.path.join(dir_path, "app_methods_piis.csv")):
+        app_methods = open(os.path.join(dir_path, "app_methods_piis.csv"), 'r', newline='')
+        app_methods_pii_reader = csv.reader(app_methods, delimiter=';')
+        app_methods_met_piis = [[row[2], row[3]] for row in app_methods_pii_reader]
+        
+    if os.path.isfile(os.path.join(dir_path, "app_permissions_piis.csv")):
+        app_permissions = open(os.path.join(dir_path, "app_permissions_piis.csv"), 'r', newline='')
+        app_permissions_piis_reader = csv.reader(app_permissions, delimiter=';')
+        app_permissions_perm_piis = [[row[0], row[1]] for row in app_permissions_piis_reader]
+    '''
+
+    
+    
     app_permissions_levels_piis = []
-    app_methods_levels_piis = []
     
-    
+    # App Permissions
     if os.path.isfile(os.path.join(dir_path, "app_permissions_piis.csv")):
         app_permissions = open(os.path.join(dir_path, "app_permissions_piis.csv"), 'r', newline='')
         app_permissions_piis_reader = csv.reader(app_permissions, delimiter=';')
         app_permissions_levels_piis = [[row[2], row[1]] for row in app_permissions_piis_reader]
     
+    app_permissions_score = 0
+    for app_level_permission in app_permissions_levels_piis:
+        app_permissions_score += levels.get(app_level_permission[0]) 
     
+        
+    # Max Permissions    
+    max_permissions_piis = open(os.path.join(scanner_dir, 'csv/permissions_piis.csv'), 'r', newline='')
+    max_permissions_piis_reader = csv.reader(max_permissions_piis, delimiter=';')
+    max_permissions_levels_piis = [[row[2], row[1]] for row in max_permissions_piis_reader]    
+    
+    max_permissions_score = 0
+    for max_level_permission in max_permissions_levels_piis:
+        max_permissions_score += levels.get(max_level_permission[0]) 
+       
+        
+    # Permissions Score
+    permissions_final_score = round((app_permissions_score / max_permissions_score) * 100)
+    
+    
+    app_methods_levels_piis = []
+       
+    # App Methods
     if os.path.isfile(os.path.join(dir_path, "app_methods_piis.csv")):
         app_methods = open(os.path.join(dir_path, "app_methods_piis.csv"), 'r', newline='')
         app_methods_pii_reader = csv.reader(app_methods, delimiter=';')
         app_methods_levels_piis = [[row[5], row[3]] for row in app_methods_pii_reader]
   
-    
-    classes_methods_permissions = open(os.path.join(scanner_dir, 'csv/classes_methods_permissons.csv'), 'r', newline='')
-    classes_methods_permissions_reader = csv.reader(classes_methods_permissions, delimiter=';')
-    
-    permissions_piis = open(os.path.join(scanner_dir, 'csv/permissions_piis.csv'), 'r', newline='')
-    permissions_piis_reader = csv.reader(permissions_piis, delimiter=';')
+  
+    app_methods_score = 0
+    for app_level_methods in app_methods_levels_piis:
+        app_methods_score += levels.get(app_level_methods[0]) 
     
     
-    csv_1 = [[row[5], row[3]] for row in classes_methods_permissions_reader]
-    csv_2 = [[row[2], row[1]] for row in permissions_piis_reader]
-    csv_final = csv_1 + csv_2
-    app_levels = app_permissions_levels_piis + app_methods_levels_piis
+    # Max Methods
+    max_methods = open(os.path.join(scanner_dir, 'csv/classes_methods_permissons.csv'), 'r', newline='')
+    max_methods_pii_reader = csv.reader(max_methods, delimiter=';')
+    max_methods_levels_piis = [[row[5], row[3]] for row in max_methods_pii_reader]
+    
+    max_methods_score = 0
+    for max_level_methods in max_methods_levels_piis:
+        max_methods_score += levels.get(max_level_methods[0]) 
+    
+    methods_final_score = round((app_methods_score / max_methods_score) * 100)
+
+    #csv_final = levels_piis_permissions_scan + levels_piis_methods_scan
+    #app_levels = app_permissions_levels_piis + app_methods_levels_piis
     
     # score = 0
     # for app_level in app_levels:
     #     score += check_for_duplicated_piis(app_level, levels, app_levels)
-    score = round(sum(check_for_duplicated_piis(app_level, levels, app_levels) for app_level in app_levels))
+    #score = round(sum(check_for_duplicated_piis(app_level, levels, app_levels) for app_level in app_levels))
     
-    min_score = 0  
+    #min_score = 0  
     # max_score = 0
     # for level in csv_final:
     #     max_score += check_for_duplicated_piis(level, levels, csv_final)
     # max_score = round(max_score)
-    max_score = round(sum(check_for_duplicated_piis(level, levels, csv_final) for level in csv_final)) #O maximo score é juntar-mos os csvs das permissoes e classes e calcular o score maximo
+    #max_score = round(sum(check_for_duplicated_piis(level, levels, csv_final) for level in csv_final)) #O maximo score é juntar-mos os csvs das permissoes e classes e calcular o score maximo
     
-    normalized_score = (score / max_score) * 99 + 1
-    final_score = 100 - round(normalized_score)
+    
+    final_score = 100 - round((permissions_final_score + methods_final_score) / 200 * 100)
     
     print(final_score)
      
@@ -263,7 +302,7 @@ def check_for_duplicated_piis(app_level, levels, app_levels): # Check For duplic
         for app_pii in app_levels: 
             for x in pii.split(","):
                 for y in app_pii[1].split(","):
-                    if x == y:
+                   if x == y:
                         found += 1
                         
         score = score / found              
@@ -301,4 +340,4 @@ get_api_methods(api_classes, package_name, dir_path)
 get_api_methods_pii(dir_path, scanner_dir)
 get_permissions(dir_path, package_name)
 get_permissions_pii(dir_path, scanner_dir)
-calculate_score(dir_path, scanner_dir, package_name, package_version)    
+calculate_score(dir_path, scanner_dir)    
